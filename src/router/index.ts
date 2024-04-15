@@ -1,22 +1,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import LoginForm from '@/modules/LoginForm.vue'
+import DasboradP from '@/views/DasboradP.vue'
+import ViewEquipo from '@/layouts/EquipoLyt.vue'
+import PanelEquipoLyt from '@/layouts/PanelEquipoLyt.vue'
+import SeccionEquipoLyt from '@/layouts/SeccionEquipoLyt.vue'
+
+// Panel equipo
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'login',
+      component: LoginForm
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+      path: '/home/',
+      name: 'home',
+      component: DasboradP,
+      children: [
+        {
+          path: "",
+          redirect: "/home/equipo",
+          children: [
+            {
+              path: '/home/equipo/panel',
+              component: PanelEquipoLyt,
+              children: [
+                {
+                  path: "",
+                  redirect: '/home/equipo/panel/seccionEquipo'
+                },
+                {
+                  path: 'seccionEquipo',
+                  component: SeccionEquipoLyt
+                },
+              ]
+            },
+          ]
+        },
+        {
+          path: 'equipo',
+          component: ViewEquipo
+        },
+        // {
+        //   path: 'overview',
+        //   component: OverviewD
+        // },
+      ]
+    },
   ]
 })
 
