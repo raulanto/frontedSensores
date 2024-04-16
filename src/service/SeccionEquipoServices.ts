@@ -1,14 +1,14 @@
 
 import axios from 'axios';
 import { environment } from '@/environments/environment';
-import type { DatosLectura } from '@/types/EquipoModelo';
+import type { DatosLectura } from '@/types/SeccionEquipo';
 
 
-export default class Equipos {
+export default class SeccionEquipo {
 
-    async getEquipo(): Promise<DatosLectura[]> {
+    async getSeccionEquipo(): Promise<DatosLectura[]> {
         try {
-            const url = `${environment.apiUrl}equipo`;
+            const url = `${environment.apiUrl}seccionEquipo`;
             const headers = {
                 'Content-Type': 'application/json',
                 'accept': 'application/json',
@@ -22,9 +22,8 @@ export default class Equipos {
             const resultados: DatosLectura[] = data.results.map((item: any) => ({
                 id: item.id,
                 nombre: item.nombre,
+                fkequipo_nombre: item.fkequipo_nombre,
                 descripcion: item.descripcion,
-                fkplanta_nombre: item.fkplanta_nombre,
-                fkproducto_nombre: item.fkproducto_nombre,
             }));
             return resultados;
         } catch (error) {

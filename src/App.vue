@@ -9,5 +9,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <router-view></router-view>
+  <main class="dark:border-gray-600">
+    <router-view></router-view>
+
+  </main>
 </template>
