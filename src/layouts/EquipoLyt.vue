@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useEquipoStore } from '@/stores/Equipos'
+import { useEquipoStore } from '@/stores/EquipoStore'
 import { onMounted } from 'vue'
 import TableEquipo from '@/components/TableEquipo.vue';
 const equipoStore = useEquipoStore()

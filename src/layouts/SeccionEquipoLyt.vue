@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSeccionEquipoStore } from '@/stores/SeccionEquipoPinia'
+import { useSeccionEquipoStore } from '@/stores/SeccionEquipoStore'
 import { onMounted } from 'vue'
 import TablaSeccionEquipo from '@/components/TablaSeccionEquipo.vue';
 const seccionEquipoStore = useSeccionEquipoStore()

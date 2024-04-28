@@ -12,7 +12,7 @@ export default class Equipos {
             const headers = {
                 'Content-Type': 'application/json',
                 'accept': 'application/json',
-                'Authorization': 'Token 386fc05a3228b0f4fcab67cb9bca9c0d13cb7c77'
+                'Authorization': `Token ${localStorage.token}`
             };
             const response = await axios.get(url, { headers });
             if (response.status !== 200) {
