@@ -65,11 +65,11 @@ chartOptions = {
             autoScaleYaxis: false,
             zoomedArea: {
                 fill: {
-                    color: '#90CAF9',
+                    color: '#f69971',
                     opacity: 0.4
                 },
                 stroke: {
-                    color: '#0D47A1',
+                    color: '#c54a08',
                     opacity: 0.4,
                     width: 1
                 }
@@ -77,17 +77,13 @@ chartOptions = {
         },
 
     },
-    fill: {
-        type: "gradient",
-        gradient: {
-            opacityFrom: 0.55,
-            opacityTo: 0,
-            shade: "#1C64F2",
-            gradientToColors: ["#1C64F2"],
-        },
-    },
+  fill: {
+    colors: ['#ee905d', '#f1ad7c', '#ecd8c4']
+  },
     stroke: {
         curve: 'smooth',
+      colors: ['#f2751c'] // Cambiado a naranja
+
     },
     dataLabels: {
 
@@ -110,7 +106,7 @@ chartOptions = {
             minHeight: undefined,
             maxHeight: 120,
             style: {
-              colors: ['#ffffff'],
+              colors: ['#1f1919'],
                 fontSize: '12px',
                 fontFamily: 'Helvetica, Arial, sans-serif',
                 fontWeight: 400,
@@ -128,11 +124,50 @@ chartOptions = {
         align: 'center',
     },
     markers: {
+      colors: ['#f47836', '#e9731e', '#f69971'], // Colors of the markers
         hover: {
             sizeOffset: 4,
 
         }
     },
+  tooltip: {
+    enabled: true, // Enable tooltips
+    shared: true, // If multiple series are shown in a chart, show tooltip for all series
+    intersect: false, // Show tooltip only when cursor intersects a data point
+    followCursor: true, // Make tooltip follow cursor
+    theme: 'light', // Can be 'light' or 'dark'
+
+
+    style: {
+      fontSize: '12px',
+      fontFamily: undefined
+    },
+    onDatasetHover: {
+      highlightDataSeries: true,
+    },
+    x: {
+      show: true,
+      format: 'dd MMM', // Date format
+      formatter: undefined, // Custom formatter function
+    },
+
+    z: {
+      formatter: undefined,
+      title: 'Size: '
+    },
+    marker: {
+      show: true,
+    },
+    items: {
+      display: 'flex',
+    },
+    fixed: {
+      enabled: false,
+      position: 'topRight',
+      offsetX: 0,
+      offsetY: 0,
+    },
+  },
 
 
 };

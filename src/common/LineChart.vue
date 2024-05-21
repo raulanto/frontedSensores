@@ -71,11 +71,11 @@ const minimo2=parseFloat(result2.min);
 let chartOptions: ApexCharts.ApexOptions;
 chartOptions = {
   chart: {
-    id:props.name,
+    id: props.name,
     group: 'datosLect',
     type: 'area',
     height: "auto",
-    width:'auto',
+    width: 'auto',
     fontFamily: "Inter, sans-serif",
     stacked: true,
     offsetX: 0,
@@ -86,11 +86,11 @@ chartOptions = {
       autoScaleYaxis: false,
       zoomedArea: {
         fill: {
-          color: '#90CAF9',
+          color: '#f9ac90', // Cambiado a naranja
           opacity: 0.4
         },
         stroke: {
-          color: '#0D47A1',
+          color: '#a1460d', // Cambiado a naranja
           opacity: 0.4,
           width: 1
         }
@@ -102,24 +102,23 @@ chartOptions = {
     }
   },
   fill: {
-    type: "gradient",
-    gradient: {
-      opacityFrom: 0.55,
-      opacityTo: 0,
-      shade: "#1C64F2",
-      gradientToColors: ["#1C64F2"],
-    },
+    colors: ['#ee905d', '#f1ad7c', '#ecd8c4']
   },
   stroke: {
     curve: 'smooth',
+    colors: ['#f2751c'] // Cambiado a naranja
   },
   dataLabels: {
-
     enabled: false
   },
   yaxis: {
     min: minimo, // Cambiado a valor numérico
-    max: maximo // Cambiado a valor numérico
+    max: maximo, // Cambiado a valor numérico
+    labels: {
+      style: {
+        colors: ['#f2751c'] // Cambiado a naranja
+      }
+    }
   },
   xaxis: {
     categories: props.fecha,
@@ -134,7 +133,7 @@ chartOptions = {
       minHeight: undefined,
       maxHeight: 120,
       style: {
-        colors: ['#ffffff'],
+        colors: ['#0a0000'], // Cambiado a naranja
         fontSize: '12px',
         fontFamily: 'Helvetica, Arial, sans-serif',
         fontWeight: 400,
@@ -148,29 +147,28 @@ chartOptions = {
     },
   },
   title: {
-
     text: props.name,
     align: 'center',
+
   },
   markers: {
     hover: {
       sizeOffset: 4,
-
-    }
+    },
+    colors: ['#f2751c'] // Cambiado a naranja
   },
-
-
 };
+
 
 
 let chartOptions2: ApexCharts.ApexOptions;
 chartOptions2 = {
   chart: {
-    id:props.name2,
+    id: props.name2,
     group: 'datosLect',
     type: 'area',
     height: "auto",
-    width:'auto',
+    width: 'auto',
     fontFamily: "Inter, sans-serif",
     stacked: true,
     offsetX: 0,
@@ -181,11 +179,11 @@ chartOptions2 = {
       autoScaleYaxis: false,
       zoomedArea: {
         fill: {
-          color: '#90CAF9',
+          color: '#f9ac90', // Cambiado a naranja
           opacity: 0.4
         },
         stroke: {
-          color: '#0D47A1',
+          color: '#a1460d', // Cambiado a naranja
           opacity: 0.4,
           width: 1
         }
@@ -193,30 +191,29 @@ chartOptions2 = {
     },
     toolbar: {
       autoSelected: 'pan',
-      show: true
+      show: true,
+      color: '#f2751c', // Cambiado a naranja
     }
   },
   fill: {
-    type: "gradient",
-    gradient: {
-      opacityFrom: 0.55,
-      opacityTo: 0,
-      shade: "#1C64F2",
-      gradientToColors: ["#1C64F2"],
-    },
+    colors: ['#ee905d', '#f1ad7c', '#ecd8c4']
+
   },
   stroke: {
     curve: 'smooth',
+    colors: ['#f2751c'] // Cambiado a naranja
   },
   dataLabels: {
+    enabled: false,
 
-    enabled: false
   },
   yaxis: {
+    color: '#f2751c', // Cambiado a naranja
     min: minimo2, // Cambiado a valor numérico
     max: maximo2 // Cambiado a valor numérico
   },
   xaxis: {
+    color: '#f2751c', // Cambiado a naranja
     categories: props.fecha,
     tickAmount: 15,
     labels: {
@@ -229,7 +226,7 @@ chartOptions2 = {
       minHeight: undefined,
       maxHeight: 120,
       style: {
-        colors: ['#ffffff'],
+        colors: ['#0a0000'], // Cambiado a naranja
         fontSize: '12px',
         fontFamily: 'Helvetica, Arial, sans-serif',
         fontWeight: 400,
@@ -245,16 +242,19 @@ chartOptions2 = {
   title: {
     text: props.name2,
     align: 'center',
-  },
-  markers: {
-    hover: {
-      sizeOffset: 4,
-
+    style: {
+      color: '#f2751c' // Cambiado a naranja
     }
   },
+  markers: {
 
-
+    hover: {
+      sizeOffset: 4,
+    },
+    colors: ['#f47836', '#e9731e', '#f69971']
+  },
 };
+
 
 </script>
 <template>
