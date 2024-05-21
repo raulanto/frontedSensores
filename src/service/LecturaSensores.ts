@@ -1,14 +1,12 @@
+import axios from "axios";
+import { environment } from '../environments/environment';
+import type {DatosLectura} from "../types/Lectura";
 
-import axios from 'axios';
-import { environment } from '@/environments/environment';
-import type { DatosLectura } from '@/types/EquipoModelo';
+export default class Lectura {
 
-
-export default class Equipos {
-
-    async getEquipo(): Promise<DatosLectura[]> {
+    async getLectura(fk:number): Promise<DatosLectura[]> {
         try {
-            const url = `${environment.apiUrl}equipo/`;
+            const url = `${environment.apiUrl}lectura/?fkESeccionEquipoSensor=${fk}`;
             const headers = {
                 'Content-Type': 'application/json',
                 'accept': 'application/json',
@@ -21,10 +19,11 @@ export default class Equipos {
             const data = response.data;
             const resultados: DatosLectura[] = data.results.map((item: any) => ({
                 id: item.id,
-                nombre: item.nombre,
-                descripcion: item.descripcion,
-                fkplanta_nombre: item.fkplanta_nombre,
-                fkproducto_nombre: item.fkproducto_nombre,
+                valor: item.valor,
+                fkEtapa: item.fkEtapa,
+                fkESeccionEquipoSensor: item.fkESeccionEquipoSensor,
+                created_at: item.created_at,
+                createdTime_at: item.createdTime_at,
             }));
             return resultados;
         } catch (error) {

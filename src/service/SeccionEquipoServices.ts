@@ -8,7 +8,7 @@ export default class SeccionEquipo {
 
     async getSeccionEquipo(): Promise<DatosLectura[]> {
         try {
-            const url = `${environment.apiUrl}seccionEquipo`;
+            const url = `${environment.apiUrl}seccionEquipo/`;
             const headers = {
                 'Content-Type': 'application/json',
                 'accept': 'application/json',
@@ -25,6 +25,7 @@ export default class SeccionEquipo {
                 fkequipo_nombre: item.fkequipo_nombre,
                 descripcion: item.descripcion,
             }));
+
             return resultados;
         } catch (error) {
             console.error(error);

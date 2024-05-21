@@ -6,12 +6,12 @@ import  router from '@/router';
 export const useLoginStore = defineStore({
     id: 'login',
     state: () => ({
-        datosLectura: null as DatosLectura | null, // Definimos datosLectura como un objeto de tipo DatosLectura o null
+        datosLectura: null as DatosLectura | null, 
     }),
 
     getters: {
         validacion(): boolean {
-            return !!this.datosLectura; // Devuelve true si datosLectura no es nulo, de lo contrario, devuelve false
+            return !!this.datosLectura; //  true si datosLectura no es nulo, de lo contrario, devuelve false
         }
     },
 
@@ -25,12 +25,13 @@ export const useLoginStore = defineStore({
                     this.datosLectura = response;
                     localStorage.user_id =this.datosLectura.user_id
                     localStorage.token =this.datosLectura.token
+                    localStorage.email =this.datosLectura.email
+                    localStorage.first_name =this.datosLectura.first_name
                     router.push('home');
                     // console.log('Correcto');
                     // console.log(this.datosLectura.user_id);
                 } else {
-                    // console.log('Error en la solicitud');
-                    // console.log('mal');
+                    console.log('Error en la solicitud');
                 }
             } catch (error) {
                 console.error(error);

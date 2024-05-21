@@ -1,4 +1,4 @@
-// En datosLectura.ts
+
 
 export interface DatosLectura {
     id: number;
