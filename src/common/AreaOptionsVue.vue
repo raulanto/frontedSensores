@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { defineProps } from 'vue'
+import _default from "chart.js/dist/plugins/plugin.tooltip";
+
 
 const props = defineProps({
   series: {
@@ -13,7 +15,16 @@ const props = defineProps({
   },
   fecha: {
     type: Array
-  }
+  },
+  y: {
+    type: Number,
+
+  },
+  y2: {
+    type: Number,
+
+  },
+
 })
 
 let chartSeries = props.series
@@ -47,7 +58,8 @@ const result = findMaxMin(props.series)
 const maximo = parseFloat(result.max)
 const minimo = parseFloat(result.min)
 
-
+console.log(maximo);
+console.log(minimo);
 
 let chartOptions: ApexCharts.ApexOptions
 chartOptions = {
@@ -79,6 +91,50 @@ chartOptions = {
       }
     }
   },
+  annotations: {
+    yaxis: [
+      {
+        y: props.y,
+        borderColor: '#f2751c',
+        label: {
+          borderColor: '#0a0000',
+          style: {
+            color: '#fff',
+            background: '#f2751c',
+          },
+          text: `Valor minimo ${props.y}`,
+        },
+      },
+      {
+        y: props.y2,
+        borderColor: '#f2751c',
+        label: {
+          borderColor: '#0a0000',
+          style: {
+            color: '#fff',
+            background: '#f2751c',
+          },
+          text: `Valor maximo ${props.y2}`,
+        },
+      },
+      {
+        y: minimo,
+        y2: maximo,
+        borderColor: '#000',
+        fillColor: '#ecd8c4',
+        opacity: 0.2,
+        label: {
+          borderColor: '#333',
+          style: {
+            fontSize: '10px',
+            color: '#333',
+            background: '#ffffff',
+          },
+          text: `Valor maximo ${maximo} Valor minimo ${minimo}`,
+        },
+      },
+    ],
+  },
 
 
   fill: {
@@ -93,8 +149,8 @@ chartOptions = {
     enabled: false
   },
   yaxis: {
-    min: minimo, // Cambiado a valor numérico
-    max: maximo // Cambiado a valor numérico
+    min: props.y, // Cambiado a valor numérico
+    max: props.y2 // Cambiado a valor numérico
   },
   xaxis: {
     categories: props.fecha,
@@ -182,10 +238,8 @@ chartOptions = {
   ></VueApexCharts>
 </template>
 
-
 <style>
 .apexcharts-tooltip-marker {
   background-color: #f47836 !important; /* Cambia el color a rojo */
 }
-
 </style>

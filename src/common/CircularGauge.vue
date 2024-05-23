@@ -31,6 +31,7 @@ const chartOptions = {
     type: 'radialBar',
     offsetY: -10
   },
+
   plotOptions: {
     radialBar: {
       startAngle: -135,
@@ -53,16 +54,15 @@ const chartOptions = {
     }
   },
   fill: {
-    color: '#f2751c',
     type: 'gradient',
     gradient: {
       shade: 'light',
-      gradientToColors: ['#f2751c'],
-      shadeIntensity: 0.15,
+      shadeIntensity: 0.4,
       inverseColors: false,
+      gradientToColors: ['#ABE5A1'],
       opacityFrom: 1,
       opacityTo: 1,
-      stops: [0, 50, 65, 91]
+      stops: [0, 50, 53, 91]
     }
   },
   stroke: {
