@@ -65,3 +65,6 @@ const nombre= localStorage.first_name
     </nav>
 
 </template>
+
+
+
