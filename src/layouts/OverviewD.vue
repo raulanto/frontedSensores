@@ -178,7 +178,7 @@ onMounted(() => {
       <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
           <section class="h-fit mb-4">
-            <ViewAreaOptio :name="'Temperatura tanque'" :fk="9" ></ViewAreaOptio>
+            <ViewAreaOptio :name="'Temperatura tanque'" :fk="9" />
           </section>
         </div>
       </div>

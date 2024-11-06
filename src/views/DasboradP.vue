@@ -11,14 +11,7 @@ onMounted(() => {
 
 <template>
   <div class="antialiased bg-gray-50 dark:bg-gray-900">
-    <!-- Navegacion -->
-    <!--    <NavDas></NavDas>-->
 
-    <!-- Sidebar -->
-    <!-- Navegacion entre paginas -->
-    <SideDas></SideDas>
-
-    <!-- Vistas de Navegacion de Sidebar -->
     <main class="p-4 md:scroll-ml-60 z-40 h-full pt-20 dark:border-gray-600 dark:bg-gray-900">
       <router-view></router-view>
     </main>

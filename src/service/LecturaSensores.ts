@@ -12,6 +12,7 @@ export default class Lectura {
                 'accept': 'application/json',
                 'Authorization': `Token ${localStorage.token}`
             };
+
             const response = await axios.get(url, { headers });
             if (response.status !== 200) {
                 throw new Error('Error en la solicitud');
