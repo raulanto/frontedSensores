@@ -1,3 +1,17 @@
+Puedes probar el proyecto aqui https://proyecto-front-sensores.vercel.app/panel
+ El sistema es de seguimiento de sensores aplicado a una depuradora de ostiones
+
+
+
+
+
+
+
+
+
+
+
+
 # frontedSensores
 
 This template should help get you started developing with Vue 3 in Vite.
