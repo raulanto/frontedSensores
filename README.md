@@ -2,6 +2,13 @@ Puedes probar el proyecto aqui https://proyecto-front-sensores.vercel.app/panel
  El sistema es de seguimiento de sensores aplicado a una depuradora de ostiones
 
 
+Cuenta con:
+- Equipo
+- Planta
+- Producto
+- Sensores
+- Procesos
+- notificaciones
 
 
 
